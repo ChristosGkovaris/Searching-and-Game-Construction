@@ -13,7 +13,7 @@ Welcome to the "Artificial Intelligence Projects", an implementation of artifici
 
 
 ## Game with AI
-- Play a 3x3 grid game where two players (MIN and MAX) alternate moves. The MAX player uses the 
+- Objective: Play a 3x3 grid game where two players (MIN and MAX) alternate moves. The MAX player uses the 
   Minimax algorithm to select optimal moves to achieve winning configurations.
 - How to play: The game begins with an 'S' in a specific position on the grid. Players 
   alternate 
