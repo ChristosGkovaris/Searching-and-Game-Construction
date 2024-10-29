@@ -40,7 +40,7 @@ Welcome to the "Artificial Intelligence Projects", an implementation of artifici
 
 
 ## Collaboration
-This project was a collaborative effort. Special thanks to [SpanouMaria](https://github.com/SpanouMaria) and [] (), for their significant contributions to the development and improvement of the game.
+This project was a collaborative effort. Special thanks to [SpanouMaria](https://github.com/SpanouMaria) and [](), for their significant contributions to the development and improvement of the game.
 
 
 ## Others
