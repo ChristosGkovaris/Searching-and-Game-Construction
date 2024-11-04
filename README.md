@@ -4,22 +4,22 @@ Welcome to the "Artificial Intelligence Projects", an implementation of artifici
 
 
 ## 8-puzzle Solver
-- Objective: Solve the 8-puzzle by finding the minimum sequence of moves from an initial to a 
+- **Objective:** Solve the 8-puzzle by finding the minimum sequence of moves from an initial to a 
   final state using Uniform Cost Search (UCS) or A* with a heuristic function.
-- How to play: Input the initial puzzle state and choose between UCS and A* algorithms to find the 
+- **How to play:** Input the initial puzzle state and choose between UCS and A* algorithms to find the 
   optimal path.
-- Feedback: The program terminates when no further moves are possible or a solution/winner is 
+- **Feedback:** The program terminates when no further moves are possible or a solution/winner is 
   found.
 
 
 ## Game with AI
-- Objective: Play a 3x3 grid game where two players (MIN and MAX) alternate moves. The MAX player uses the 
+- **Objective:** Play a 3x3 grid game where two players (MIN and MAX) alternate moves. The MAX player uses the 
   Minimax algorithm to select optimal moves to achieve winning configurations.
-- How to play: The game begins with an 'S' in a specific position on the grid. Players 
+- **How to play:** The game begins with an 'S' in a specific position on the grid. Players 
   alternate 
   placing 'C', 'S' or 'E' on the grid. The game ends when one player creates a winning sequence 
   (C-S-E or E-S-C) in a row, column or diagonal.
-- Feedback: The program terminates when no further moves are possible or a solution/winner is 
+- **Feedback:** The program terminates when no further moves are possible or a solution/winner is 
   found.
 
 
@@ -31,12 +31,12 @@ Welcome to the "Artificial Intelligence Projects", an implementation of artifici
 
   
 ## How to run
-- Clone the Repository:
+- **Clone the Repository:**
   ``` bash
       git clone https://github.com/ChristosGkovaris/Artificial-Intelligence-Projects.git
       cd Artificial-Intelligence-Projects
-- Ensure you have Java installed: The program requires Java 11 or later.
-- Compile and run programs: **javac PuzzleSolver.java** / **javac GridGame.java**
+- **Ensure you have Java installed:** The program requires Java 11 or later.
+- **Compile and run programs:** **javac PuzzleSolver.java** / **javac GridGame.java**
 
 
 ## Collaboration
