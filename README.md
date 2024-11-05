@@ -41,7 +41,3 @@ Welcome to the "Artificial Intelligence Projects", an implementation of artifici
 
 ## Collaboration
 This project was a collaborative effort. Special thanks to [SpanouMaria](https://github.com/SpanouMaria) and [VasilisK1](https://github.com/VasilisK1), for their significant contributions to the development and improvement of the game.
-
-
-## Others
-For a pdf version of the reports, please send me an email at christosgkovariscs52@gmail.com
