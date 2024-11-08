@@ -1,7 +1,6 @@
 import java.util.*;
 
-public class GridGame
-{
+public class GridGame {
     // Represents an empty cell on the board
     private static final char EMPTY = '\u0000';
 
