@@ -5,6 +5,7 @@ class PuzzleSolver {
     // The goal state of the puzzle
     private int[][] goalState = {{6, 5, 4}, {7, 0, 3}, {8, 1, 2}};
 
+    
     public void solve(int[][] initialState, boolean useAStar) {
         
         // Check if the initial state is valid
@@ -52,6 +53,7 @@ class PuzzleSolver {
         }
     }
 
+    
     private boolean isValidState(int[][] state) {
         Set<Integer> tiles = new HashSet<>();
         for (int[] row : state) {
@@ -69,6 +71,7 @@ class PuzzleSolver {
         return true;
     }
 
+    
     private void printSolution(PuzzleState state) {
         List<PuzzleState> path = state.getPathFromStart();
         System.out.println("Path to solution:");
@@ -86,6 +89,7 @@ class PuzzleSolver {
         System.out.println("Depth: " + state.getDepth()); 
     }
 
+    
     private int findZeroRow(int[][] state) {
         for (int i = 0; i < state.length; i++) {
             for (int j = 0; j < state[i].length; j++) {
@@ -99,6 +103,7 @@ class PuzzleSolver {
         return -1; 
     }
 
+    
     private int findZeroCol(int[][] state) {
         for (int i = 0; i < state.length; i++) {
             for (int j = 0; j < state[i].length; j++) {
