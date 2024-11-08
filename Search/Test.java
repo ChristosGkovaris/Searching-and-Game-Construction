@@ -1,11 +1,8 @@
 import java.util.*;
 
 public class Test {
+
 	
-    /**
-     * Main method to execute the puzzle solver.
-     * @param args Command line arguments.
-     */
     public static void main(String[] args) {
        
         Scanner scanner = new Scanner(System.in);
