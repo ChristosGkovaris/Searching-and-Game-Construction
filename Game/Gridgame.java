@@ -1,7 +1,7 @@
 import java.util.*;
 
-public class GridGame {
-
+public class GridGame
+{
     // Represents an empty cell on the board
     private static final char EMPTY = '\u0000';
 
@@ -24,6 +24,7 @@ public class GridGame {
         game.runGame();
     }
 
+    
     // Runs the game loop
     private void runGame() {
         Scanner scanner = new Scanner(System.in);
@@ -69,6 +70,7 @@ public class GridGame {
         scanner.close();
     }
 
+    
     // Initializes the game board
     private void initializeBoard() {
         for (int i = 0; i < 3; i++) {
@@ -78,23 +80,27 @@ public class GridGame {
         }
     }
 
+    
     // Determines if a move is valid
     private boolean canPlace(int row, int col, char letter) {
         return row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == EMPTY;
     }
 
+    
     // Computes the best move for the maximizing player
     private void bestMove() {
         // Placeholder for the best move calculation
         // Implementation of AI logic can be added here
     }
 
+    
     // Checks if the current player has won
     private boolean checkWin() {
         String[] patterns = {"CSE", "ESC"};
         return checkLines(patterns);
     }
 
+    
     // Checks rows, columns, and diagonals for win patterns
     private boolean checkLines(String[] patterns) {
         String rowString, colString, diag1 = "", diag2 = "";
@@ -125,6 +131,7 @@ public class GridGame {
         return false;
     }
 
+    
     // Checks if the board is full
     private boolean isBoardFull() {
         for (int i = 0; i < 3; i++) {
@@ -136,6 +143,7 @@ public class GridGame {
         return true;
     }
 
+    
     // Prints the current state of the board
     private void printBoard() {
         System.out.println("~board~");
