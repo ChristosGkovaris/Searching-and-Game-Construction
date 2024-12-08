@@ -1,5 +1,5 @@
-# Artificial Intelligence Projects
-Welcome to the "Artificial Intelligence Projects" repository, an implementation of artificial intelligence search algorithms in Java. The project includes two primary exercises: an 8-puzzle problem solver using UCS and A* algorithms, and a Minimax-based game with AI. This project was implemented during the sixth semester, in the course MYY602 of the curriculum of the University of Ioannina. The final grade of the project is 2.5 out of 3.
+# Searching and Game Construction
+Welcome to the "Searching and Game Construction" repository, an implementation of artificial intelligence search algorithms in Java. The project includes two primary exercises: an 8-puzzle problem solver using UCS and A* algorithms, and a Minimax-based game with AI. This project was implemented during the sixth semester, in the course MYY602 of the curriculum of the University of Ioannina. The final grade of the project is 2.5 out of 3.
 
 
 # Code Overview
@@ -32,8 +32,8 @@ Welcome to the "Artificial Intelligence Projects" repository, an implementation 
 ## How to run
 - Clone the Repository:
   ``` bash
-      git clone https://github.com/ChristosGkovaris/Artificial-Intelligence-Projects.git
-      cd Artificial-Intelligence-Projects
+      git clone https://github.com/ChristosGkovaris/Searching-and-Game-Construction.git
+      cd Searching-and-Game-Construction
 - Ensure you have Java installed: The program requires Java 11 or later.
 - Compile and run programs: **javac PuzzleSolver.java** / **javac GridGame.java**
 
