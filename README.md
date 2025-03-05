@@ -1,8 +1,9 @@
 # Searching and Game Construction
-Welcome to the "Searching and Game Construction" repository, an implementation of artificial intelligence search algorithms in Java. The project includes two primary exercises: an 8-puzzle problem solver using UCS and A* algorithms, and a Minimax-based game with AI. This project was implemented during the sixth semester, in the course MYY602 of the curriculum of the University of Ioannina. The final grade of the project is 2.5 out of 3.
+Welcome to the "Searching and Game Construction" repository. This repository contains an implementation of artificial intelligence search algorithms in Java. The project includes two primary exercises: an 8-puzzle problem solver using UCS and A* algorithms, and a Minimax-based game with AI. This project was implemented during the sixth semester, in the course MYY602 of the curriculum of the University of Ioannina. The final grade of the project is 2.5 out of 3.
 
 
-# Code Overview
+
+# Overview
 **8-puzzle Solver**
 - Objective: Solve the 8-puzzle by finding the minimum sequence of moves from an initial to a 
   final state using Uniform Cost Search (UCS) or A* with a heuristic function.
@@ -22,20 +23,13 @@ Welcome to the "Searching and Game Construction" repository, an implementation o
   found.
 
 
+
 ## Implementation Details
 - The 8-puzzle Solver includes classes and methods to manage states, validate moves and print 
   solutions.
 - The Game with AI includes methods for managing player turns, determining winning conditions, 
   using the Minimax algoriths to choose moves.
 
-  
-## How to run
-- Clone the Repository:
-  ``` bash
-      git clone https://github.com/ChristosGkovaris/Searching-and-Game-Construction.git
-      cd Searching-and-Game-Construction
-- Ensure you have Java installed: The program requires Java 11 or later.
-- Compile and run programs: **javac PuzzleSolver.java** / **javac GridGame.java**
 
 
 ## Collaboration
