@@ -1,6 +1,6 @@
-# SEARCHING AND GAME CONSTRUCTION
+# NEURAL CLASSIFICATION AND UNSUPERVISED LEARNING
 
-This project implements **AI search algorithms and game-playing techniques** in **Java**, including an **8-Puzzle solver** using **Uniform Cost Search (UCS)** and **A\***, as well as a **3×3 strategic game** powered by the **Minimax algorithm**. It was developed as part of the **MYY602 – Artificial Intelligence** course at the **University of Ioannina**. The final grade of the project is **2.5 out of 3**.
+This project implements **foundational Computational Intelligence algorithms** from scratch in **Java**, including a **Multi-Layer Perceptron (MLP)** for supervised classification and a **K-Means clustering engine** for unsupervised pattern recognition[cite: 9, 62, 84]. [cite_start]It was developed as part of the **MYE035 – Computational Intelligence** course at the **University of Ioannina**[cite: 1].
 
 ---
 
@@ -18,127 +18,98 @@ This project implements **AI search algorithms and game-playing techniques** in 
 
 ## OVERVIEW
 
-The **Searching and Game Construction** project includes two core components:
+The **Neural Classification and Unsupervised Learning** project consists of two primary modules:
 
-### **1. 8-Puzzle Solver (UCS & A\*)**
-A solver for the classical **8-puzzle**, where the player must reach a goal configuration by sliding tiles.
+### **1. MLP Classifier (Supervised Learning)**
+A robust Neural Network implementation designed to solve a complex 4-class spatial classification problem.
+- Utilizes a **3-layer hidden architecture** ($H_1, H_2, H_3$).
+- Supports multiple activation functions: **Logistic**, **Tanh**, or **ReLU**.
+- Trained using **Backpropagation** with **Mini-batch Gradient Descent**.
 
-Users can:
-- Input the **initial state** of the puzzle  
-- Choose between **Uniform Cost Search (UCS)** or **A\*** with a heuristic  
-- Receive the **optimal sequence of moves** or termination feedback when no solution exists  
-
-### **2. Game with AI (Minimax Algorithm)**
-A 3×3 board game played by two players (**MIN** and **MAX**) who alternate placing symbols (`C`, `S`, `E`).
-
-- The **MAX player uses Minimax** to choose the best move  
-- The goal is to form a winning sequence of **C-S-E** or **E-S-C**  
-- Game ends when a **winning line** (row/column/diagonal) is formed or when no moves remain  
-
-Both tasks focus on **state search**, **heuristics**, and **optimal-move decision making**.
+### **2. K-Means Engine (Unsupervised Learning)**
+An algorithmic tool for discovering hidden structures in 2D spatial datasets.
+- Performs clustering on a dataset of 1200 points across 9 real clusters.
+- Evaluates clustering quality using the **Sum of Squared Errors (SSE)**.
+- Implements iterative optimization to find optimal centroid locations.
 
 ---
 
 ## FEATURES
 
-### **8-Puzzle Solver**
-- State validation and move generation  
-- Uniform Cost Search implementation  
-- A\* search with heuristic evaluation  
-- Detection of unsolvable states  
-- Output of optimal path and explored states  
+### **MLP Classifier**
+- Customizable Architecture: Configurable neurons for three hidden layers to optimize performance.
+- Optimization Control: Flexible mini-batch sizes ($N/10, N/20, N/100, N/200$) for efficient training.
+- Generalization Testing: Automated evaluation of model accuracy on a 4000-sample test set.
+- Stopping Criteria: Training persists for at least 800 epochs or until error convergence.
 
-### **AI Game (3×3 Grid)**
-- Alternating turns between MIN and MAX  
-- Automatic optimal move selection using Minimax  
-- Win detection (rows, columns, diagonals)  
-- Input validation and state printing  
-- Termination on solution or exhaustion of moves  
+### **K-Means Clustering**
+- Global Best Pursuit: Executes 50 independent runs with random initializations to find the global minimum error.
+- Elbow Method Support: Facilitates estimation of the true cluster count by testing $M = \{3, 5, 7, 9, 11, 13\}$.
+- Visual Validation: Generates detailed plots of data points and calculated centroids.
 
 ---
 
 ## INPUT DATA
 
-### For the 8-Puzzle:
-- Initial 3×3 configuration  
-- Goal state (fixed)  
-- Algorithm selection: **UCS** or **A\***
+### **SDT (Classification Dataset)**
+- Samples: 8000 points total (4000 for Training and 4000 for Testing).
+- Space: Points $(x_1, x_2)$ distributed within the $[0,2] \times [0,2]$ square.
+- Categories: 4 classes ($C_1, C_2, C_3, C_4$) defined by non-linear geometric constraints.
 
-### For the AI Game:
-- Starting board containing one initial `S`  
-- Player inputs (`C`, `S`, `E` placements) for MIN turns  
-- MAX player moves are **AI-generated**
+### **SDO (Clustering Dataset)**
+- Samples: 1200 points in total.
+- Structure: 9 clusters based on specific rectangular regions and background noise.
 
 ---
 
 ## ALGORITHMS IMPLEMENTED
 
-### **1. Uniform Cost Search (UCS) – 8-Puzzle**
-- Explores states using lowest path cost  
-- Guarantees optimal solution  
-- Suitable when all moves have equal cost  
+### **1. Multi-Layer Perceptron (MLP)**
+- Forward Pass: Calculations of neuron activations across all layers.
+- Backpropagation: Gradient computation for every weight and bias in the network.
+- Mini-batch Gradient Descent: Error-driven weight updates performed per group of $L$ examples.
 
-### **2. A\* Search – 8-Puzzle**
-Uses:  
-- `f(n) = g(n) + h(n)`  
-- Heuristics (e.g., misplaced tiles, Manhattan distance)
-
-Efficient for exploring large search spaces with optimality.
-
-### **3. Minimax Algorithm – AI Game**
-- MAX aims to maximize evaluation  
-- MIN aims to minimize it  
-- Explores future board states recursively  
-- Selects move with best guaranteed outcome  
+### **2. K-Means Clustering**
+- Centroid Initialization: Selecting random initial data points as cluster centers.
+- Assignment & Update: Iterative process of assigning points to nearest centers and re-calculating centroids.
+- Error Minimization: Objective function based on Euclidean distance.
 
 ---
 
 ## IMPLEMENTATION DETAILS
 
-### **8-Puzzle Solver**
-- State objects representing tile configurations  
-- Expansion functions for up/down/left/right moves  
-- Priority queues for UCS/A\*  
-- Path reconstruction from goal back to root  
-- Printed step-by-step solution
-
-### **AI Game**
-- 3×3 board representation  
-- Methods for:
-  - Valid move generation  
-  - Winning pattern detection (C-S-E or E-S-C)  
-  - Minimax recursive evaluation  
-- Alternating turns between MIN and MAX  
-- Complete game loop with result handling  
+- Language: Pure **Java** (JDK 8+) without external machine learning libraries.
+- Visualization: **Python (Matplotlib)** scripts are used to process the generated `.txt` data and create:
+    - Decision boundary plots.
+    - Centroid distribution maps.
+    - SSE vs. $M$ "Elbow" charts.
+- Architecture: Modular design with separate classes for MLP logic, K-Means execution, and Data generation.
 
 ---
 
 ## USAGE
 
-### **Run the 8-Puzzle Solver**
-1. Start the program  
-2. Enter the **initial puzzle state**  
-3. Choose:
-   - `1` → Uniform Cost Search  
-   - `2` → A\* Search  
-4. View:
-   - Optimal path  
-   - Number of moves  
-   - Final solution or failure message  
+### **Run the MLP Classifier**
+1. Navigate to the Exercise 1 directory.
+2. Compile: `javac Main.java`
+3. Run: `java Main`
+4. View the training error per epoch and the final generalization percentage on the test set.
 
-### **Run the AI Game**
-1. Launch the program  
-2. Board starts with an `'S'` in a fixed position  
-3. MIN enters moves manually  
-4. MAX responds with **AI-generated Minimax moves**  
-5. Game ends when a winning C-S-E or E-S-C pattern appears or no moves remain  
+### **Run the K-Means Engine**
+1. Navigate to the Exercise 2 directory.
+2. Compile: `javac MainKMeans.java`
+3. Run: `java MainKMeans`
+4. The program will generate `kmeans_result_M[X].txt` files for each tested $M$ value.
+
+### **Generate Visualizations**
+1. Ensure Python and Matplotlib are installed.
+2. Run: `python visualization.py` (Exercise 1) or `python clusters.py` (Exercise 2) to view graphical results.
 
 ---
 
 ## LICENSE
 
-This project was developed as part of the  
-**MYY602 – Artificial Intelligence** course at the University of Ioannina.
+This project was developed for academic purposes as part of the **MYE035 - Computational Intelligence** course at the University of Ioannina.
 
 Final implementation by the project creators.
 
@@ -146,14 +117,8 @@ Final implementation by the project creators.
 
 ## CONTACT
 
-**Christos-Grigorios Gkovaris**  
-University of Ioannina – Computer Science and Engineering  
-GitHub: https://github.com/ChristosGkovaris
+**Christos-Grigorios Gkovaris** University of Ioannina – Computer Science and Engineering  
+GitHub: [ChristosGkovaris](https://github.com/ChristosGkovaris)
 
-**Maria Spanou**  
-University of Ioannina – Computer Science and Engineering  
-GitHub: https://github.com/SpanouMaria
-
-**Vasilis Kotopoulos**  
-University of Ioannina – Computer Science and Engineering  
-GitHub: https://github.com/VasilisK1
+**Vasilis Kotopoulos** University of Ioannina – Computer Science and Engineering  
+GitHub: [VasilisK1](https://github.com/VasilisK1)
